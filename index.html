@@ -1,538 +1,684 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>مشاغل الثقة | قرميد حدادة تعهدات حفريات ألمنيوم مطابخ</title>
-<meta name="description" content="مشاغل الثقة - خبرة في قرميد، حدادة، تعهدات، حفريات أبار، أساسات عمار، ألمنيوم، مطابخ">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Cairo', sans-serif;
-    background: #0a0f1c;
-    color: #ffffff;
-    line-height: 1.6;
-}
-/* شريط التنقل */
-.navbar {
-    background: rgba(10, 15, 28, 0.95);
-    padding: 12px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #ff4d2e;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-}
-.logo-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    color: white;
-}
-.logo-text .name {
-    font-size: 20px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.logo-text .desc {
-    font-size: 10px;
-    color: #ffd700;
-}
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-}
-.nav-links a:hover { color: #ff4d2e; }
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 55px;
-    height: 55px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(37,211,102,0.4);
-}
-.whatsapp-float i { font-size: 32px; color: white; }
-.admin-secret {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 45px;
-    height: 45px;
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    opacity: 0.6;
-}
-.hero {
-    text-align: center;
-    padding: 60px 5% 70px;
-}
-.hero h1 {
-    font-size: 45px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-@media (min-width: 768px) { .hero h1 { font-size: 60px; } }
-.hero h1 span {
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.hero p {
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto 25px;
-    color: #cbd5e1;
-}
-.btn-primary, .btn-outline {
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-weight: 800;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: 5px;
-}
-.btn-primary {
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    color: white;
-    border: none;
-}
-.btn-outline {
-    border: 2px solid #ffd700;
-    color: #ffd700;
-    background: transparent;
-}
-.section-title {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 800;
-    margin: 50px 5% 30px;
-}
-@media (min-width: 768px) { .section-title { font-size: 38px; } }
-.section-title span {
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    margin: 12px auto 0;
-    border-radius: 3px;
-}
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-}
-.service-card {
-    background: rgba(26, 31, 46, 0.9);
-    border-radius: 20px;
-    padding: 25px 15px;
-    text-align: center;
-    border: 1px solid rgba(255, 77, 46, 0.2);
-    transition: 0.3s;
-}
-.service-card:hover {
-    transform: translateY(-5px);
-    border-color: #ff4d2e;
-}
-.service-icon {
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    font-size: 30px;
-    color: white;
-}
-.service-card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: #ffd700;
-}
-.service-card p {
-    color: #cbd5e1;
-    font-size: 13px;
-}
-.stats-section {
-    background: linear-gradient(135deg, rgba(255,77,46,0.1), rgba(0,0,0,0.3));
-    margin: 40px auto;
-    padding: 30px 15px;
-    border-radius: 40px;
-    width: 90%;
-    max-width: 1000px;
-}
-.stats-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-.stat-number {
-    font-size: 35px;
-    font-weight: 900;
-    background: linear-gradient(135deg, #ffd700, #ff8c00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: block;
-}
-.contact-wrapper {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 5%;
-}
-.contact-container {
-    background: rgba(26, 31, 46, 0.95);
-    border-radius: 30px;
-    overflow: hidden;
-}
-.contact-info {
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    padding: 30px 20px;
-    text-align: center;
-}
-.info-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
-}
-.info-item i {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.contact-form {
-    padding: 30px 20px;
-}
-.contact-form h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffd700;
-}
-.input-group {
-    margin-bottom: 15px;
-}
-.input-group input,
-.input-group textarea,
-.input-group select {
-    width: 100%;
-    padding: 12px 16px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 30px;
-    color: white;
-    font-family: 'Cairo', sans-serif;
-    font-size: 14px;
-}
-.input-group input:focus,
-.input-group textarea:focus {
-    outline: none;
-    border-color: #ff4d2e;
-}
-.btn-submit {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #ff4d2e, #ff6b35);
-    border: none;
-    border-radius: 40px;
-    color: white;
-    font-weight: 800;
-    font-size: 1rem;
-    cursor: pointer;
-}
-.footer {
-    background: #0a0f1c;
-    text-align: center;
-    padding: 30px 5% 20px;
-    margin-top: 50px;
-    border-top: 1px solid rgba(255,77,46,0.3);
-}
-.footer p {
-    font-size: 12px;
-    color: #94a3b8;
-}
-.toast {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    left: 20px;
-    background: #1f2937;
-    padding: 12px 20px;
-    border-radius: 50px;
-    border-right: 3px solid #ff4d2e;
-    z-index: 10000;
-    text-align: center;
-    max-width: 300px;
-    margin: 0 auto;
-}
-#adminOverlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    z-index: 1000000;
-}
-#adminPanel {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #1a1f2e;
-    padding: 25px;
-    border-radius: 30px;
-    z-index: 1000001;
-    width: 90%;
-    max-width: 450px;
-    border: 2px solid #ff4d2e;
-}
-@media (max-width: 600px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 36px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>مشاغل الثقة | المعلم أبو محمد - خبرة 30 سنة في الحدادة والقرميد والألمنيوم</title>
+    <meta name="description" content="مشاغل الثقة - المعلم أبو محمد، خبرة 30 عاماً في الحدادة، القرميد، الألمنيوم، التعهدات، الحفريات، المطابخ. جودة وإتقان في الأردن.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0a0f1c;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(10, 15, 28, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #ff4d2e;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+        .logo-text .name {
+            font-size: 20px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo-text .desc {
+            font-size: 10px;
+            color: #ffd700;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff4d2e;
+        }
+        /* أزرار التواصل */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 58px;
+            height: 58px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(37,211,102,0.4);
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+        .whatsapp-float i {
+            font-size: 32px;
+            color: white;
+        }
+        .admin-secret {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+        .admin-secret:hover {
+            opacity: 1;
+        }
+        /* القسم الرئيسي */
+        .hero {
+            text-align: center;
+            padding: 60px 5% 70px;
+            background: linear-gradient(135deg, #0a0f1c, #111827);
+        }
+        .hero h1 {
+            font-size: 45px;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 60px; }
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero p {
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #cbd5e1;
+        }
+        .btn-primary, .btn-outline {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            color: white;
+            border: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,77,46,0.4);
+        }
+        .btn-outline {
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #ffd700;
+            color: #0a0f1c;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            margin: 50px 5% 30px;
+        }
+        @media (min-width: 768px) {
+            .section-title { font-size: 38px; }
+        }
+        .section-title span {
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            margin: 12px auto 0;
+            border-radius: 3px;
+        }
+        /* بطاقة المعلم أبو محمد */
+        .master-card {
+            background: linear-gradient(135deg, #1a1f2e, #0f1420);
+            border-radius: 30px;
+            padding: 30px;
+            margin: 20px auto 40px;
+            max-width: 1000px;
+            text-align: center;
+            border: 1px solid rgba(255, 77, 46, 0.4);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .master-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 55px;
+            color: white;
+            border: 3px solid #ffd700;
+        }
+        .master-card h2 {
+            font-size: 28px;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        .master-card .years {
+            font-size: 45px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .master-specialties {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .specialty-badge {
+            background: rgba(255, 77, 46, 0.2);
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: 1px solid #ff4d2e;
+            font-weight: 700;
+        }
+        /* شبكة الخدمات بالصور */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .service-card {
+            background: rgba(26, 31, 46, 0.95);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 77, 46, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff4d2e;
+        }
+        .service-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .service-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -40px auto 15px;
+            font-size: 28px;
+            color: white;
+            position: relative;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        .service-card p {
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+        /* آراء العملاء الحقيقية */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        .testimonial-card {
+            background: rgba(26, 31, 46, 0.95);
+            border-radius: 24px;
+            padding: 25px;
+            border-right: 4px solid #ff4d2e;
+        }
+        .testimonial-text {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            font-weight: 800;
+            color: #ffd700;
+        }
+        .testimonial-job {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        /* الإحصائيات */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(255, 77, 46, 0.1), rgba(0, 0, 0, 0.3));
+            margin: 50px auto;
+            padding: 35px 20px;
+            border-radius: 50px;
+            width: 90%;
+            max-width: 1000px;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .stat-number {
+            font-size: 38px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+        }
+        /* نموذج الاتصال */
+        .contact-wrapper {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+        .contact-container {
+            background: rgba(26, 31, 46, 0.95);
+            border-radius: 30px;
+            overflow: hidden;
+        }
+        .contact-info {
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-form {
+            padding: 30px 20px;
+        }
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            color: white;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #ff4d2e;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ff4d2e, #ff6b35);
+            border: none;
+            border-radius: 40px;
+            color: white;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+        }
+        .footer {
+            background: #0a0f1c;
+            text-align: center;
+            padding: 30px 5% 20px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 77, 46, 0.3);
+        }
+        .toast {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            left: 20px;
+            background: #1f2937;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border-right: 3px solid #ff4d2e;
+            z-index: 10000;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        #adminOverlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000000;
+        }
+        #adminPanel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1a1f2e;
+            padding: 25px;
+            border-radius: 30px;
+            z-index: 1000001;
+            width: 90%;
+            max-width: 450px;
+            border: 2px solid #ff4d2e;
+        }
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 36px; }
+            .master-card h2 { font-size: 22px; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="whatsapp-float" id="whatsappBtn"><i class="fab fa-whatsapp"></i></div>
-<div class="admin-secret" id="secretAdminBtn"><i class="fas fa-crown"></i></div>
+    <div class="whatsapp-float" id="whatsappBtn"><i class="fab fa-whatsapp"></i></div>
+    <div class="admin-secret" id="secretAdminBtn"><i class="fas fa-crown"></i></div>
 
-<nav class="navbar">
-    <a href="#" class="logo">
-        <div class="logo-icon">🏗️</div>
-        <div class="logo-text"><div class="name">مشاغل الثقة</div><div class="desc">قرميد | حدادة | تعهدات | حفريات | ألمنيوم | مطابخ</div></div>
-    </a>
-    <div class="nav-links">
-        <a href="#">الرئيسية</a>
-        <a href="#services">خدماتنا</a>
-        <a href="#contact">اتصل بنا</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <h1>مشاغل <span>الثقة</span></h1>
-    <p>خبرة 20 عاماً في قرميد، حدادة، تعهدات، حفريات آبار، أساسات عمار، ألمنيوم، مطابخ. نخدم جميع محافظات الأردن بجودة وإتقان.</p>
-    <div><a href="#contact" class="btn-primary">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a><a href="#services" class="btn-outline">خدماتنا</a></div>
-</section>
-
-<h2 id="services" class="section-title">خدماتنا <span>المتكاملة</span></h2>
-<div class="services-grid">
-    <div class="service-card"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3>قرميد وبناء</h3><p>توريد وتركيب القرميد الفاخر، عزل حراري، أسقف حديثة بضمان الجودة</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-wrench"></i></div><h3>حدادة إنشائية</h3><p>حدادة الأعمدة والجسور، درابزين، بوابات حديدية، هياكل معدنية</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>تعهدات عامة</h3><p>مقاولات شاملة، ترميم، صيانة، بناء فلل وعمائر، إشراف هندسي</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-tint"></i></div><h3>حفريات أبار</h3><p>حفر آبار مياه، صيانة وتأهيل، تركيب مضخات، ضمان جودة المياه</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3>أساسات عمار</h3><p>أساسات مسلحة، قواعد ورقاب، خوازيق، أعمال تربة ودك</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-cogs"></i></div><h3>ألمنيوم</h3><p>شبابيك وأبواب ألمنيوم عازلة، واجهات سحاب، مطابخ ألمنيوم</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-blender"></i></div><h3>مطابخ حديثة</h3><p>مطابخ خشب وفورميكا وألمنيوم، رخام وجرانيت، تصميم حسب الطلب</p></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-door-open"></i></div><h3>شبابيك وأبواب</h3><p>شبابيك بي في سي، أبواب داخلية وخارجية، تركيب احترافي</p></div>
-</div>
-
-<div class="stats-section">
-    <div class="stats-grid">
-        <div class="stat-item"><span class="stat-number" data-target="20">0</span><span class="stat-label">سنوات خبرة</span></div>
-        <div class="stat-item"><span class="stat-number" data-target="500">0</span><span class="stat-label">مشروع منجز</span></div>
-        <div class="stat-item"><span class="stat-number" data-target="100">0</span><span class="stat-label">رضا العملاء</span></div>
-    </div>
-</div>
-
-<div id="contact" class="contact-wrapper">
-    <div class="contact-container">
-        <div class="contact-info">
-            <h3><i class="fas fa-headset"></i> تواصل معنا</h3>
-            <div class="info-item"><i class="fas fa-phone"></i><div><strong>0772158245</strong></div></div>
-            <div class="info-item"><i class="fab fa-whatsapp"></i><div><strong>واتساب: 0772158245</strong></div></div>
-            <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>عمان، الأردن - نخدم جميع المحافظات</strong></div></div>
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">🏗️</div>
+            <div class="logo-text">
+                <div class="name">مشاغل الثقة</div>
+                <div class="desc">قرميد | حدادة | تعهدات | حفريات | ألمنيوم | مطابخ</div>
+            </div>
+        </a>
+        <div class="nav-links">
+            <a href="#">الرئيسية</a>
+            <a href="#services">خدماتنا</a>
+            <a href="#master">المعلم أبو محمد</a>
+            <a href="#testimonials">آراء العملاء</a>
+            <a href="#contact">اتصل بنا</a>
         </div>
-        <div class="contact-form">
-            <h3><i class="fas fa-file-invoice"></i> اطلب عرض سعر مجاني</h3>
-            <div class="input-group"><input type="text" id="userName" placeholder="الاسم الكامل"></div>
-            <div class="input-group"><input type="tel" id="userPhone" placeholder="رقم الجوال"></div>
-            <div class="input-group"><select id="serviceSelect"><option value="">اختر الخدمة</option><option>قرميد وبناء</option><option>حدادة إنشائية</option><option>تعهدات عامة</option><option>حفريات آبار</option><option>أساسات عمار</option><option>ألمنيوم</option><option>مطابخ حديثة</option></select></div>
-            <div class="input-group"><textarea id="orderMsg" rows="3" placeholder="تفاصيل المشروع (المساحة، الموقع، الملاحظات)"></textarea></div>
-            <button class="btn-submit" onclick="sendOrder()">إرسال الطلب <i class="fas fa-paper-plane"></i></button>
+    </nav>
+
+    <section class="hero">
+        <h1>مشاغل <span>الثقة</span></h1>
+        <p>بإشراف المعلم أبو محمد - خبرة 30 سنة في الحدادة، القرميد، والألمنيوم. نخدم جميع محافظات الأردن بجودة وإتقان.</p>
+        <div>
+            <a href="#contact" class="btn-primary">اطلب عرض سعر <i class="fas fa-arrow-left"></i></a>
+            <a href="#services" class="btn-outline">خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- قسم المعلم أبو محمد -->
+    <div id="master" class="master-card">
+        <div class="master-avatar"><i class="fas fa-user-astronaut"></i></div>
+        <h2>المعلم أبو محمد</h2>
+        <div class="years">30 سنة خبرة</div>
+        <p>حرفي قدير في مجال الحدادة الإنشائية، القرميد، والألمنيوم. أشرف على مئات المشاريع في الأردن وتخرج على يديه أجيال من الحرفيين.</p>
+        <div class="master-specialties">
+            <span class="specialty-badge"><i class="fas fa-fire"></i> حدادة إنشائية</span>
+            <span class="specialty-badge"><i class="fas fa-hard-hat"></i> قرميد وبناء</span>
+            <span class="specialty-badge"><i class="fas fa-cogs"></i> ألمنيوم وشبابيك</span>
         </div>
     </div>
-</div>
 
-<footer class="footer">
-    <p>© 2025 مشاغل الثقة - جميع الحقوق محفوظة | هاتف: 0772158245</p>
-</footer>
+    <h2 id="services" class="section-title">خدماتنا <span>المتكاملة</span></h2>
+    <div class="services-grid">
+        <div class="service-card"><img src="https://images.pexels.com/photos/209250/pexels-photo-209250.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="قرميد"><div class="service-content"><div class="service-icon"><i class="fas fa-hard-hat"></i></div><h3>قرميد وبناء</h3><p>توريد وتركيب القرميد الفاخر، عزل حراري، أسقف حديثة بإشراف المعلم أبو محمد</p></div></div>
+        <div class="service-card"><img src="https://images.pexels.com/photos/2760249/pexels-photo-2760249.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="حدادة"><div class="service-content"><div class="service-icon"><i class="fas fa-wrench"></i></div><h3>حدادة إنشائية</h3><p>حدادة الأعمدة والجسور، درابزين، بوابات حديدية بخبرة 30 سنة</p></div></div>
+        <div class="service-card"><img src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="ألمنيوم"><div class="service-content"><div class="service-icon"><i class="fas fa-cogs"></i></div><h3>ألمنيوم وشبابيك</h3><p>شبابيك وأبواب ألمنيوم عازلة، واجهات سحاب، مطابخ ألمنيوم</p></div></div>
+        <div class="service-card"><img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="تعهدات"><div class="service-content"><div class="service-icon"><i class="fas fa-handshake"></i></div><h3>تعهدات عامة</h3><p>مقاولات شاملة، ترميم، صيانة، بناء فلل وعمائر</p></div></div>
+        <div class="service-card"><img src="https://images.pexels.com/photos/2214570/pexels-photo-2214570.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="حفريات"><div class="service-content"><div class="service-icon"><i class="fas fa-tint"></i></div><h3>حفريات أبار</h3><p>حفر آبار مياه، صيانة وتأهيل، تركيب مضخات</p></div></div>
+        <div class="service-card"><img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600" class="service-img" alt="مطابخ"><div class="service-content"><div class="service-icon"><i class="fas fa-blender"></i></div><h3>مطابخ حديثة</h3><p>مطابخ خشب وفورميكا وألمنيوم، رخام وجرانيت</p></div></div>
+    </div>
 
-<div id="adminOverlay" onclick="closeAdmin()"></div>
-<div id="adminPanel">
-    <h2 style="color:white;text-align:center;">🔐 لوحة المدير</h2>
-    <div id="adminLoginBox"><input type="password" id="adminPass" placeholder="كلمة السر" style="width:100%;padding:12px;margin:15px 0;border-radius:30px;border:none;"><button class="btn-submit" onclick="checkAdminLogin()">دخول</button></div>
-    <div id="adminContent" style="display:none;"><div id="ordersList" style="max-height:300px;overflow:auto;margin-bottom:15px;"></div><button class="btn-submit" onclick="closeAdmin()" style="background:#333;">إغلاق</button></div>
-</div>
+    <!-- آراء العملاء الحقيقية -->
+    <h2 id="testimonials" class="section-title">آراء <span>عملائنا</span></h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-card"><div class="testimonial-text">"تعاملت مع المعلم أبو محمد في حدادة فيلتي، شغل متقن ودقة في التنفيذ. أنصح به وبشدة."</div><div class="testimonial-author">أبو خالد - مقاول</div><div class="testimonial-job">مقاول بناء معتمد</div></div>
+        <div class="testimonial-card"><div class="testimonial-text">"تركيب القرميد والألمنيوم عند مشاغل الثقة كان تجربة ممتازة. أسعار مناسبة وجودة عالية."</div><div class="testimonial-author">أبو عمر</div><div class="testimonial-job">صاحب فيلا - عمان</div></div>
+        <div class="testimonial-card"><div class="testimonial-text">"خبرة المعلم أبو محمد 30 سنة واضحة في شغله. حدادة متقنة وقرميد فاخر. شكراً لكم."</div><div class="testimonial-author">مهندس رامي</div><div class="testimonial-job">مهندس استشاري</div></div>
+    </div>
 
-<script>
-// بيانات الطلبات
-function getOrders() { return JSON.parse(localStorage.getItem('thiqah_orders') || '[]'); }
-function saveOrders(orders) { localStorage.setItem('thiqah_orders', JSON.stringify(orders)); }
+    <!-- الإحصائيات -->
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item"><span class="stat-number" data-target="30">0</span><span class="stat-label">سنة خبرة المعلم</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="500">0</span><span class="stat-label">مشروع منجز</span></div>
+            <div class="stat-item"><span class="stat-number" data-target="100">0</span><span class="stat-label">رضا العملاء</span></div>
+        </div>
+    </div>
 
-// إرسال الطلب
-function sendOrder() {
-    let name = document.getElementById('userName').value.trim();
-    let phone = document.getElementById('userPhone').value.trim();
-    let service = document.getElementById('serviceSelect').value;
-    let msg = document.getElementById('orderMsg').value.trim();
-    if(!name || !phone) { showToast('❌ الرجاء إدخال الاسم ورقم الجوال'); return; }
-    if(!service) { showToast('❌ الرجاء اختيار الخدمة'); return; }
-    let orders = getOrders();
-    orders.push({ id: Date.now(), name: name, phone: phone, service: service, msg: msg || 'لا توجد تفاصيل', date: new Date().toLocaleString('ar-EG') });
-    saveOrders(orders);
-    showToast('✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
-    document.getElementById('userName').value = '';
-    document.getElementById('userPhone').value = '';
-    document.getElementById('serviceSelect').value = '';
-    document.getElementById('orderMsg').value = '';
-}
+    <!-- نموذج الاتصال -->
+    <div id="contact" class="contact-wrapper">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3><i class="fas fa-headset"></i> تواصل مع المعلم أبو محمد</h3>
+                <div class="info-item"><i class="fas fa-phone"></i><div><strong>0772158245</strong></div></div>
+                <div class="info-item"><i class="fab fa-whatsapp"></i><div><strong>واتساب: 0772158245</strong></div></div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>عمان، الأردن - نخدم جميع المحافظات</strong></div></div>
+            </div>
+            <div class="contact-form">
+                <h3><i class="fas fa-file-invoice"></i> اطلب عرض سعر مجاني</h3>
+                <div class="input-group"><input type="text" id="userName" placeholder="الاسم الكامل"></div>
+                <div class="input-group"><input type="tel" id="userPhone" placeholder="رقم الجوال"></div>
+                <div class="input-group">
+                    <select id="serviceSelect">
+                        <option value="">اختر الخدمة</option>
+                        <option>قرميد وبناء</option>
+                        <option>حدادة إنشائية</option>
+                        <option>ألمنيوم وشبابيك</option>
+                        <option>تعهدات عامة</option>
+                        <option>حفريات آبار</option>
+                        <option>مطابخ حديثة</option>
+                    </select>
+                </div>
+                <div class="input-group"><textarea id="orderMsg" rows="3" placeholder="تفاصيل المشروع (المساحة، الموقع، الملاحظات)"></textarea></div>
+                <button class="btn-submit" onclick="sendOrder()">إرسال الطلب <i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
-function showToast(msg) {
-    let toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.innerHTML = msg;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
-}
+    <footer class="footer">
+        <p>© 2025 مشاغل الثقة - المعلم أبو محمد، 30 سنة خبرة في الحدادة والقرميد والألمنيوم | هاتف: 0772158245</p>
+    </footer>
 
-// واتساب
-document.getElementById('whatsappBtn').onclick = () => window.open('https://wa.me/962772158245', '_blank');
+    <!-- لوحة المدير -->
+    <div id="adminOverlay" onclick="closeAdmin()"></div>
+    <div id="adminPanel">
+        <h2 style="color:white;text-align:center;">🔐 لوحة المدير</h2>
+        <div id="adminLoginBox"><input type="password" id="adminPass" placeholder="كلمة السر" style="width:100%;padding:12px;margin:15px 0;border-radius:30px;border:none;"><button class="btn-submit" onclick="checkAdminLogin()">دخول</button></div>
+        <div id="adminContent" style="display:none;"><div id="ordersList" style="max-height:300px;overflow:auto;margin-bottom:15px;"></div><button class="btn-submit" onclick="closeAdmin()" style="background:#333;">إغلاق</button></div>
+    </div>
 
-// أرقام متحركة
-let counted = false;
-function startCounter() {
-    if(counted) return;
-    counted = true;
-    document.querySelectorAll('.stat-number').forEach(el => {
-        let target = parseInt(el.getAttribute('data-target'));
-        let current = 0;
-        let increment = target / 50;
-        let update = () => {
-            current += increment;
-            if(current < target) { el.innerText = Math.floor(current); requestAnimationFrame(update); }
-            else { el.innerText = target + (target === 100 ? '%' : '+'); }
+    <script>
+        function getOrders() { return JSON.parse(localStorage.getItem('thiqah_orders') || '[]'); }
+        function saveOrders(orders) { localStorage.setItem('thiqah_orders', JSON.stringify(orders)); }
+        function sendOrder() {
+            let name = document.getElementById('userName').value.trim();
+            let phone = document.getElementById('userPhone').value.trim();
+            let service = document.getElementById('serviceSelect').value;
+            let msg = document.getElementById('orderMsg').value.trim();
+            if (!name || !phone) { showToast('❌ الرجاء إدخال الاسم ورقم الجوال'); return; }
+            if (!service) { showToast('❌ الرجاء اختيار الخدمة'); return; }
+            let orders = getOrders();
+            orders.push({ id: Date.now(), name: name, phone: phone, service: service, msg: msg || 'لا توجد تفاصيل', date: new Date().toLocaleString('ar-EG') });
+            saveOrders(orders);
+            showToast('✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
+            document.getElementById('userName').value = '';
+            document.getElementById('userPhone').value = '';
+            document.getElementById('serviceSelect').value = '';
+            document.getElementById('orderMsg').value = '';
+        }
+        function showToast(msg) {
+            let toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+        document.getElementById('whatsappBtn').onclick = () => window.open('https://wa.me/962772158245', '_blank');
+        let counted = false;
+        function startCounter() {
+            if (counted) return;
+            counted = true;
+            document.querySelectorAll('.stat-number').forEach(el => {
+                let target = parseInt(el.getAttribute('data-target'));
+                let current = 0;
+                let increment = target / 50;
+                let update = () => {
+                    current += increment;
+                    if (current < target) { el.innerText = Math.floor(current); requestAnimationFrame(update); }
+                    else { el.innerText = target + (target === 100 ? '%' : '+'); }
+                };
+                update();
+            });
+        }
+        let statsSection = document.querySelector('.stats-section');
+        let obs = new IntersectionObserver((e) => { if (e[0].isIntersecting) startCounter(); }, { threshold: 0.3 });
+        obs.observe(statsSection);
+        const ADMIN_KEY = "0772158245";
+        let clickCount = 0;
+        document.getElementById('secretAdminBtn').onclick = () => {
+            clickCount++;
+            setTimeout(() => clickCount = 0, 3000);
+            if (clickCount >= 5) { document.getElementById('adminPanel').style.display = 'block'; document.getElementById('adminOverlay').style.display = 'block'; clickCount = 0; }
         };
-        update();
-    });
-}
-let statsSection = document.querySelector('.stats-section');
-let obs = new IntersectionObserver((e) => { if(e[0].isIntersecting) startCounter(); }, { threshold: 0.3 });
-obs.observe(statsSection);
-
-// دخول المدير
-const ADMIN_KEY = "0772158245";
-let clickCount = 0;
-document.getElementById('secretAdminBtn').onclick = () => {
-    clickCount++;
-    setTimeout(() => clickCount = 0, 3000);
-    if(clickCount >= 5) {
-        document.getElementById('adminPanel').style.display = 'block';
-        document.getElementById('adminOverlay').style.display = 'block';
-        clickCount = 0;
-    }
-};
-function checkAdminLogin() {
-    let pass = document.getElementById('adminPass').value;
-    if(pass === ADMIN_KEY) {
-        document.getElementById('adminLoginBox').style.display = 'none';
-        document.getElementById('adminContent').style.display = 'block';
-        displayOrders();
-    } else { showToast('⚠️ كلمة المرور غير صحيحة'); }
-}
-function displayOrders() {
-    let orders = getOrders();
-    let container = document.getElementById('ordersList');
-    if(orders.length === 0) { container.innerHTML = '<p style="color:gray;text-align:center;">لا توجد طلبات</p>'; return; }
-    container.innerHTML = '';
-    [...orders].reverse().forEach(order => {
-        container.innerHTML += `<div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:15px;margin-bottom:10px;border-right:3px solid #ff4d2e;">
-            <strong>${order.name}</strong> 📞 ${order.phone}<br>🛠 ${order.service}<br>📝 ${order.msg}<br><small>📅 ${order.date}</small>
-            <div style="margin-top:8px;"><button onclick="copyOrder(${order.id})" style="background:rgba(255,255,255,0.1);border:none;padding:4px 12px;border-radius:20px;color:white;">📋 نسخ</button>
-            <button onclick="deleteOrder(${order.id})" style="background:rgba(255,255,255,0.1);border:none;padding:4px 12px;border-radius:20px;color:white;margin-right:8px;">🗑 حذف</button></div>
-        </div>`;
-    });
-}
-function copyOrder(id) {
-    let order = getOrders().find(o => o.id === id);
-    if(order) { navigator.clipboard.writeText(`الاسم: ${order.name}\nالجوال: ${order.phone}\nالخدمة: ${order.service}\nالتفاصيل: ${order.msg}`); showToast('✅ تم النسخ'); }
-}
-function deleteOrder(id) {
-    if(confirm('هل أنت متأكد؟')) {
-        let orders = getOrders().filter(o => o.id !== id);
-        saveOrders(orders);
-        displayOrders();
-        showToast('🗑 تم الحذف');
-    }
-}
-function closeAdmin() {
-    document.getElementById('adminPanel').style.display = 'none';
-    document.getElementById('adminOverlay').style.display = 'none';
-    document.getElementById('adminLoginBox').style.display = 'block';
-    document.getElementById('adminContent').style.display = 'none';
-    document.getElementById('adminPass').value = '';
-}
-</script>
+        function checkAdminLogin() {
+            let pass = document.getElementById('adminPass').value;
+            if (pass === ADMIN_KEY) {
+                document.getElementById('adminLoginBox').style.display = 'none';
+                document.getElementById('adminContent').style.display = 'block';
+                displayOrders();
+            } else { showToast('⚠️ كلمة المرور غير صحيحة'); }
+        }
+        function displayOrders() {
+            let orders = getOrders();
+            let container = document.getElementById('ordersList');
+            if (orders.length === 0) { container.innerHTML = '<p style="color:gray;text-align:center;">لا توجد طلبات</p>'; return; }
+            container.innerHTML = '';
+            [...orders].reverse().forEach(order => {
+                container.innerHTML += `<div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:15px;margin-bottom:10px;border-right:3px solid #ff4d2e;"><strong>${order.name}</strong> 📞 ${order.phone}<br>🛠 ${order.service}<br>📝 ${order.msg}<br><small>📅 ${order.date}</small><div style="margin-top:8px;"><button onclick="copyOrder(${order.id})" style="background:rgba(255,255,255,0.1);border:none;padding:4px 12px;border-radius:20px;color:white;">📋 نسخ</button><button onclick="deleteOrder(${order.id})" style="background:rgba(255,255,255,0.1);border:none;padding:4px 12px;border-radius:20px;color:white;margin-right:8px;">🗑 حذف</button></div></div>`;
+            });
+        }
+        function copyOrder(id) {
+            let order = getOrders().find(o => o.id === id);
+            if (order) { navigator.clipboard.writeText(`الاسم: ${order.name}\nالجوال: ${order.phone}\nالخدمة: ${order.service}\nالتفاصيل: ${order.msg}`); showToast('✅ تم النسخ'); }
+        }
+        function deleteOrder(id) {
+            if (confirm('هل أنت متأكد من الحذف؟')) {
+                let orders = getOrders().filter(o => o.id !== id);
+                saveOrders(orders);
+                displayOrders();
+                showToast('🗑 تم الحذف');
+            }
+        }
+        function closeAdmin() {
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('adminOverlay').style.display = 'none';
+            document.getElementById('adminLoginBox').style.display = 'block';
+            document.getElementById('adminContent').style.display = 'none';
+            document.getElementById('adminPass').value = '';
+        }
+    </script>
 </body>
 </html>
